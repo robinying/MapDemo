@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MapDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/MapDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MapDemo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MapDemo.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_base/MapDemo.lib_base.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_base/MapDemo.lib_base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_common_ui/MapDemo.lib_common_ui.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_common_ui/MapDemo.lib_common_ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/versionPlugin/versionPlugin.iml" filepath="$PROJECT_DIR$/.idea/modules/versionPlugin/versionPlugin.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Map Usage</string>
+    <string name="error_occurred">不好意思，应用出现问题。</string>
+
+</resources>

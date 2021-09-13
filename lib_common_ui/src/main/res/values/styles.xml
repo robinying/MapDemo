@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--*********************************************
+    *                  GuideCaseView                *
+    **********************************************-->
+    <style name="DefaultGuideCaseTitleStyle" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+</resources>

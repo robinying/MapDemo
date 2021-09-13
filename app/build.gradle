@@ -1,0 +1,193 @@
+import com.controller.version.plugin.*
+
+plugins {
+    id 'com.controller.version.plugin'
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.didiglobal.booster'
+}
+
+android {
+    compileSdkVersion BuildVersions.compileSdkVersion
+    buildToolsVersion BuildVersions.buildToolsVersion
+    defaultConfig {
+        applicationId "com.robin.mapdemo"
+        minSdkVersion BuildVersions.minSdkVersion
+        targetSdkVersion BuildVersions.targetSdkVersion
+        versionCode BuildVersions.versionCode
+        versionName BuildVersions.versionName
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi-v7a"
+        }
+    }
+    signingConfigs {
+        app {
+            keyAlias configProperties.getProperty("KEY_ALIAS")
+            keyPassword configProperties.getProperty("KEY_PASSWORD")
+            storeFile file(configProperties.getProperty("STORE_FILE"))
+            storePassword configProperties.getProperty("STORE_PASSWORD")
+        }
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.app
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.app
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+        jumboMode = true
+        preDexLibraries = false
+        additionalParameters = [
+                '--multi-dex',//多分包
+                '--set-max-idx-number=60000'//每个包内方法数上限
+        ]
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def buildType = "${variant.buildType.name}"
+            if (buildType == "release") {
+                outputFileName = "map_${defaultConfig.versionName}_${variant.buildType.name}.apk"
+            }
+        }
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Dependencies.kotlinLibrary
+    implementation Dependencies.kotlinCoroutinesLibrary
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation Dependencies.appcompat
+    implementation Dependencies.multiDex
+    implementation Dependencies.coreKtx
+    implementation Dependencies.material
+    implementation Dependencies.cardview
+    implementation Dependencies.constraintlayout
+
+    //lifecycle
+    implementation Dependencies.lifecycleKtx
+    //implementation Dependencies.lifecycleCommon
+    implementation Dependencies.lifecycleJava8
+    implementation Dependencies.lifecycleProcess
+    implementation Dependencies.activityKtx
+    //fragment
+    implementation Dependencies.fragmentKtx
+    //navigate
+    //implementation Dependencies.navigationFragment
+    //implementation Dependencies.navigationUi
+    implementation Dependencies.navigationFragmentKtx
+    implementation Dependencies.navigationUiKtx
+    //liveData
+    implementation Dependencies.livedataKtx
+
+    //retrofit
+    implementation Dependencies.retrofit
+    implementation Dependencies.retrofitGson
+    implementation Dependencies.gson
+    //implementation Dependencies.loggingInterceptor
+
+    implementation Dependencies.paging
+
+    implementation Dependencies.viewModelKtx
+    implementation Dependencies.glide
+//    kapt 'com.github.bumptech.glide:compiler:4.10.0'
+    implementation Dependencies.banner
+    implementation Dependencies.SmartRefreshLayout
+
+    implementation Dependencies.koinScope
+    implementation Dependencies.KoinViewModel
+    implementation Dependencies.koinFragmet
+
+
+    //mmkv
+    implementation Dependencies.mmkv
+
+    implementation Dependencies.viewPager2
+    implementation Dependencies.PersistentCookieJar
+    implementation Dependencies.retrofitUrlManager
+    //blankUtils
+    implementation Dependencies.utils
+    //指示器库
+    implementation Dependencies.magicIndicator
+    //baseAdapter
+    implementation Dependencies.baseAdapter
+    //三方RecycleView
+    implementation Dependencies.swipeRecycleView
+    //loadSir
+    implementation Dependencies.loadSir
+    //calendarView
+    implementation Dependencies.calendarView
+    //autoSize屏幕适配
+    implementation Dependencies.autoSize
+    //permission
+    implementation Dependencies.permission
+    //materialDialog
+    implementation Dependencies.dialogCore
+    implementation Dependencies.dialogLifecycle
+    implementation Dependencies.dialogColor
+    implementation Dependencies.dialogDateTime
+    implementation Dependencies.dialogBottomSheets
+    //bottomBar
+    implementation Dependencies.bottomNavigation
+    //download
+    implementation Dependencies.download
+    implementation(Dependencies.fileDownloader) {
+        exclude group: "com.android.support"
+    }
+    implementation Dependencies.lottie
+    //Bugly
+    implementation 'com.tencent.bugly:crashreport_upgrade:1.4.5'
+    implementation 'com.tencent.bugly:nativecrashreport:3.7.1'
+    //防崩溃
+    implementation Dependencies.customOnCrash
+    //popup
+    implementation Dependencies.basePopup
+    //animation
+    implementation Dependencies.androidanimations
+    //选择器
+    implementation Dependencies.pickerView
+    //沉浸式实现
+    implementation Dependencies.immersionbar
+    //二维码扫码
+    implementation Dependencies.zxingLite
+
+
+    //AnyLayer
+    //implementation "com.github.goweii:AnyLayer:4.1.6-androidx"
+    //DSLAdapter
+    implementation 'com.github.angcyo:DslAdapter:2.6.2'
+    //高德
+    implementation 'com.amap.api:3dmap:7.5.0'
+    //implementation 'com.amap.api:map2d:latest.integration'
+    implementation 'com.amap.api:location:5.3.1'
+    implementation 'com.amap.api:search:7.4.0'
+    implementation(name: 'BaiduLBS_AndroidSDK_Lib', ext: 'aar')
+    implementation project(":lib_base")
+    implementation project(":lib_common_ui")
+}

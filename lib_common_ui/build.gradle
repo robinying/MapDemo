@@ -1,0 +1,90 @@
+import com.controller.version.plugin.*
+plugins {
+    id 'com.controller.version.plugin'
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion BuildVersions.compileSdkVersion
+    buildToolsVersion BuildVersions.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion BuildVersions.minSdkVersion
+        targetSdkVersion BuildVersions.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    compileOnly Dependencies.kotlinLibrary
+    compileOnly Dependencies.coreKtx
+    compileOnly Dependencies.appcompat
+    compileOnly Dependencies.activityKtx
+    compileOnly Dependencies.glide
+    compileOnly Dependencies.utils
+    compileOnly Dependencies.magicIndicator
+    compileOnly Dependencies.swipeRecycleView
+    compileOnly Dependencies.material
+    compileOnly Dependencies.cardview
+    compileOnly Dependencies.loadSir
+    compileOnly Dependencies.mmkv
+    compileOnly Dependencies.calendarView
+    //material Dialog
+    compileOnly Dependencies.dialogCore
+    compileOnly Dependencies.dialogLifecycle
+    compileOnly Dependencies.dialogColor
+    compileOnly Dependencies.dialogDateTime
+    compileOnly Dependencies.dialogBottomSheets
+    //baseAdapter
+    compileOnly Dependencies.baseAdapter
+    //refresh
+    compileOnly Dependencies.SmartRefreshLayout
+    //lottie
+    compileOnly Dependencies.lottie
+    compileOnly project(":lib_base")
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+
+//防止中文注释出现错误
+allprojects {
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+    }
+}
+
+//publish {
+//    userOrg = 'robinying'  //Bintray用户名
+//    repoName = 'binaryDemo' //Bintray上创建的仓库名,如果你创建的是maven,则可以干掉这一行,否则需要指定仓库名
+//    groupId = 'com.robin.commonUi' //依赖名implementation 'x:y:z'中的x
+//    artifactId = 'CustomUI' //依赖名implementation 'x:y:z'中的y
+//    publishVersion = '1.0.0' //依赖名implementation 'x:y:z'中的z
+//    desc = 'Android custom UI' //对这个库的描述
+//    website = 'https://github.com/robinying/JetpackBase' //VCS地址,填写该项目的Github地址就好
+//}

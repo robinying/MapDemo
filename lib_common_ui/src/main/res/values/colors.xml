@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0DCBED</color>
+    <color name="colorPrimaryDark">#0DCBED</color>
+    <color name="colorAccent">#0DCBED</color>
+    <color name="fence_fill_color">#1E3D7EFE</color>
+    <color name="textHint">#999999</color>
+    <color name="et_bg_color">#F5F8FF</color>
+    <color name="white_a44">#44ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="color_eaf2ff">#EAF2FF</color>
+    <color name="colorGray">#333333</color>
+    <color name="color9a">#9A9A9A</color>
+    <color name="color65">#656565</color>
+    <color name="color62">#626262</color>
+    <color name="color4f">#4F4F4F</color>
+    <color name="color9">#999999</color>
+    <color name="colore1">#E1E1E1</color>
+    <color name="gray">#8e8e8e</color>
+    <color name="colorBlack666">#666666</color>
+    <color name="colorBlack333">#333333</color>
+    <color name="windowBackground">#FCFCFC</color>
+    <color name="background">#D8D8D8</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="line_color">#E9EAEC</color>
+    <!-- TabControlView -->
+    <color name="default_tcv_selected_color">#299EE3</color>
+    <color name="default_tcv_unselected_color">#FFFFFF</color>
+
+    <!-- GuideCaseView -->
+    <color name="default_guide_case_view_background_color">#801B2939</color>
+
+    <color name="hint_text_color">#C5CDD9</color>
+
+    <color name="default_shadowback_color">#ffffff</color>
+    <color name="default_shadow_color">#2a000000</color>
+</resources>

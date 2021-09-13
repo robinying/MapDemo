@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DPTextView">
+        <attr name="android:background" />
+        <attr name="android:textColor" />
+        <attr name="android:lineSpacingExtra" />
+        <attr name="android:lineSpacingMultiplier" />
+        <attr name="textPressedColor" format="color" />
+        <attr name="textDisableColor" format="color" />
+        <attr name="strokeMode" format="boolean" />
+        <attr name="pressWithStrokeMode" format="boolean" />
+        <attr name="stroke_Width" format="dimension" />
+        <attr name="strokeColor" format="color" />
+        <attr name="backgroundColor" format="color" />
+        <attr name="backgroundPressedColor" format="color" />
+        <attr name="backgroundDisableColor" format="color" />
+        <attr name="corner_radius" format="dimension" />
+        <attr name="corner_topLeftRadius" format="dimension" />
+        <attr name="corner_topRightRadius" format="dimension" />
+        <attr name="corner_bottomLeftRadius" format="dimension" />
+        <attr name="corner_bottomRightRadius" format="dimension" />
+        <attr name="shadow" format="boolean" />
+
+        <attr name="drawableWidth" format="dimension" />
+        <attr name="drawableHeight" format="dimension" />
+        <attr name="drawableScale" format="float" />
+        <attr name="urlRegion" format="boolean" />
+        <attr name="type">
+            <enum name="oval" value="1" />
+            <enum name="rect" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="RoundRectView">
+        <attr name="roundRectRadius" format="dimension" />
+        <attr name="roundRectColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SwipeRevealLayout">
+        <attr name="dragEdge">
+            <flag name="left" value="1" />
+            <flag name="right" value="2" />
+            <flag name="top" value="4" />
+            <flag name="bottom" value="8" />
+        </attr>
+
+        <attr name="mode">
+            <enum name="normal" value="0" />
+            <enum name="same_level" value="1" />
+        </attr>
+
+        <attr name="flingVelocity" format="integer" />
+
+        <attr name="minDistRequestDisallowParent" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="TabControlView">
+        <!--文字字体的大小，默认14sp-->
+        <attr name="tcv_textSize" format="dimension" />
+        <!--没选中的文字颜色，默认#299EE3-->
+        <attr name="tcv_unselectedTextColor" format="reference" />
+        <!--选中的文字颜色， 默认Color.WHITE-->
+        <attr name="tcv_selectedTextColor" format="reference" />
+        <!--没选中的背景颜色， 默认Color.TRANSPARENT-->
+        <attr name="tcv_unselectedColor" format="reference" />
+        <!--选中的背景颜色， 默认#299EE3-->
+        <attr name="tcv_selectedColor" format="reference" />
+        <!--边框宽度，默认1dp-->
+        <attr name="tcv_strokeWidth" format="dimension" />
+        <!--选项卡间的padding-->
+        <attr name="tcv_item_padding" format="dimension" />
+        <!--选项卡水平间的padding-->
+        <attr name="tcv_item_padding_horizontal" format="dimension" />
+        <!--选项卡垂直间的padding-->
+        <attr name="tcv_item_padding_vertical" format="dimension" />
+        <!--选项卡中展示的内容-->
+        <attr name="tcv_items" format="reference" />
+        <!--选项卡中选中的内容（默认和展示的一样）-->
+        <attr name="tcv_values" format="reference" />
+        <!--是否等宽显示，默认false-->
+        <attr name="tcv_equalWidth" format="boolean" />
+        <!--是否伸展开，填充整个父布局，默认false-->
+        <attr name="tcv_stretch" format="boolean" />
+        <!--默认选中项的索引-->
+        <attr name="tcv_defaultSelection" format="integer" />
+        <!--选中drawable-->
+        <attr name="tcv_selectedDrawable" format="reference" />
+        <!--未选中drawable-->
+        <attr name="tcv_unselectedDrawable" format="reference" />
+    </declare-styleable>
+
+    <!--可伸展的布局-->
+    <declare-styleable name="ExpandableLayout">
+        <!--动画持续的时间，默认是300ms-->
+        <attr name="el_duration" format="integer" />
+        <!--是否是展开的，默认是false-->
+        <attr name="el_expanded" format="boolean" />
+        <!--视差效果，默认是1-->
+        <attr name="el_parallax" format="float" />
+        <!--对齐方式，默认是VERTICAL，垂直-->
+        <attr name="android:orientation" />
+    </declare-styleable>
+
+    <!--ActionBar  TitleBar-->
+    <declare-styleable name="TitleBar">
+        <!--标题栏的高度，默认52dp-->
+        <attr name="tb_barHeight" format="dimension" />
+        <!--是否是沉浸式标题栏，默认是false-->
+        <attr name="tb_immersive" format="boolean" />
+        <!--左右图标和文字的padding-->
+        <attr name="tb_actionPadding" format="dimension" />
+        <!--标题栏两侧控件的padding-->
+        <attr name="tb_sideTextPadding" format="dimension" />
+        <!--标题栏左侧文字的颜色-->
+        <attr name="tb_sideTextColor" format="color" />
+        <!--标题栏标题文字的颜色-->
+        <attr name="tb_titleTextColor" format="color" />
+        <!--标题栏副标题文字的颜色-->
+        <attr name="tb_subTitleTextColor" format="color" />
+        <!---标题栏右侧文字的颜色-->
+        <attr name="tb_actionTextColor" format="color" />
+        <!--中间title的对齐方式-->
+        <attr name="tb_centerGravity" format="enum">
+            <enum name="center" value="0" />
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <!--标题栏左侧文字的大小-->
+        <attr name="tb_sideTextSize" format="dimension" />
+        <!--标题栏标题文字的大小-->
+        <attr name="tb_titleTextSize" format="dimension" />
+        <!--标题栏副标题文字的大小-->
+        <attr name="tb_subTitleTextSize" format="dimension" />
+        <!--标题栏右侧文字的大小-->
+        <attr name="tb_actionTextSize" format="dimension" />
+        <!--文字的内容以及图标内容-->
+        <attr name="tb_leftImageResource" format="reference" />
+        <!--标题栏左侧的文字-->
+        <attr name="tb_leftText" format="string" />
+        <!--标题栏标题的文字-->
+        <attr name="tb_titleText" format="string" />
+        <!--标题栏副标题的文字-->
+        <attr name="tb_subTitleText" format="string" />
+        <!--标题栏分割线的颜色-->
+        <attr name="tb_dividerColor" format="color" />
+        <!--标题栏分割线的高度-->
+        <attr name="tb_dividerHeight" format="dimension" />
+        <!--标题栏背景色是否使用主题颜色，默认是true-->
+        <attr name="tb_useThemeColor" format="boolean" />
+    </declare-styleable>
+    <attr name="TitleBarStyle" format="reference" />
+
+    <!-- 是否开启抗锯齿 -->
+    <attr name="antiAlias" format="boolean" />
+    <!-- 圆弧起始角度，3点钟方向为0，顺时针递增，小于0或大于360进行取余 -->
+    <attr name="startAngle" format="float" />
+    <!-- 圆弧度数 -->
+    <attr name="sweepAngle" format="float" />
+    <!-- 设置动画时间 -->
+    <attr name="animTime" format="integer" />
+    <!-- 绘制内容的数值 -->
+    <attr name="maxValue" format="float" />
+    <attr name="value" format="float" />
+    <!-- 绘制内容的单位 -->
+    <attr name="unit" format="string|reference" />
+    <attr name="unitSize" format="dimension" />
+    <attr name="unitColor" format="color|reference" />
+    <!-- 绘制内容相应的提示语 -->
+    <attr name="hint" format="string|reference" />
+    <attr name="hintSize" format="dimension" />
+    <attr name="hintColor" format="color|reference" />
+    <!-- 精度，默认为0 -->
+    <attr name="precision" format="integer" />
+    <attr name="valueSize" format="dimension" />
+    <attr name="valueColor" format="color|reference" />
+    <!-- 圆弧颜色，设置多个可实现渐变 -->
+    <attr name="arcColor1" format="color|reference" />
+    <attr name="arcColor2" format="color|reference" />
+    <attr name="arcColor3" format="color|reference" />
+    <!-- 背景圆弧颜色，默认白色 -->
+    <attr name="bgArcColor" format="color|reference" />
+    <!-- 圆弧宽度 -->
+    <attr name="arcWidth" format="dimension" />
+    <!-- 圆弧颜色， -->
+    <attr name="arcColors" format="color|reference" />
+    <!-- 文字的偏移量。相对于圆半径而言，默认三分之一 -->
+    <attr name="textOffsetPercentInRadius" format="float" />
+
+    <!-- 圆形进度条 -->
+    <declare-styleable name="CircleProgressBar">
+        <attr name="antiAlias" />
+        <attr name="startAngle" />
+        <attr name="sweepAngle" />
+        <attr name="animTime" />
+        <attr name="maxValue" />
+        <attr name="value" />
+        <attr name="precision" />
+        <attr name="valueSize" />
+        <attr name="valueColor" />
+        <attr name="textOffsetPercentInRadius" />
+        <!-- 绘制内容相应的提示语 -->
+        <attr name="hint" />
+        <attr name="hintSize" />
+        <attr name="hintColor" />
+        <!-- 绘制内容的单位 -->
+        <attr name="unit" />
+        <attr name="unitSize" />
+        <attr name="unitColor" />
+        <!-- 圆弧宽度 -->
+        <attr name="arcWidth" />
+        <attr name="arcColors" />
+        <!-- 背景圆弧颜色 -->
+        <attr name="bgArcColor" />
+        <!-- 背景圆弧宽度 -->
+        <attr name="bgArcWidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="DialProgress">
+        <attr name="antiAlias" />
+        <attr name="startAngle" />
+        <attr name="sweepAngle" />
+        <attr name="animTime" />
+        <attr name="maxValue" />
+        <attr name="value" />
+        <attr name="precision" />
+        <attr name="valueSize" />
+        <attr name="valueColor" />
+        <attr name="textOffsetPercentInRadius" />
+        <!-- 绘制内容的单位 -->
+        <attr name="unit" />
+        <attr name="unitSize" />
+        <attr name="unitColor" />
+        <!-- 绘制内容相应的提示语 -->
+        <attr name="hint" />
+        <attr name="hintSize" />
+        <attr name="hintColor" />
+        <!-- 圆弧的宽度 -->
+        <attr name="arcWidth" />
+        <!-- 刻度的宽度 -->
+        <attr name="dialWidth" format="dimension|reference" />
+        <!-- 刻度之间的间隔 -->
+        <attr name="dialIntervalDegree" format="integer" />
+        <!-- 圆弧颜色， -->
+        <attr name="arcColors" />
+        <!-- 背景圆弧线颜色 -->
+        <attr name="bgArcColor" />
+        <!-- 刻度线颜色 -->
+        <attr name="dialColor" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MultiLineEditText">
+        <!--最大输入文字的数目，默认240-->
+        <attr name="mlet_maxCount" format="integer" />
+        <!--是否忽略中英文的差异，默认true-->
+        <attr name="mlet_ignoreCnOrEn" format="boolean" />
+        <!--输入框提示文字-->
+        <attr name="mlet_hintText" format="string|reference" />
+        <!--输入框提示文字的颜色-->
+        <attr name="mlet_hintTextColor" format="color|reference" />
+        <!--输入框的padding， 默认10dp-->
+        <attr name="mlet_contentPadding" format="dimension" />
+        <!--输入框背景-->
+        <attr name="mlet_contentBackground" format="reference" />
+        <!--输入框的内容-->
+        <attr name="mlet_contentText" format="string|reference" />
+        <!--输入框文字的大小-->
+        <attr name="mlet_contentTextSize" format="dimension|reference" />
+        <!--输入框文字的颜色-->
+        <attr name="mlet_contentTextColor" format="color|reference" />
+        <!--输入框的高度，默认140dp-->
+        <attr name="mlet_contentViewHeight" format="dimension|reference" />
+        <!--输入框的高度是否是固定高度，默认是true-->
+        <attr name="mlet_isFixHeight" format="boolean" />
+        <!--统计数字显示剩余数目,默认false-->
+        <attr name="mlet_showSurplusNumber" format="boolean" />
+    </declare-styleable>
+    <attr name="MultiLineEditTextStyle" format="reference" />
+
+
+    <declare-styleable name="LabelsView">
+        <attr name="selectType" format="enum">
+            <enum name="NONE" value="1" />
+            <enum name="SINGLE" value="2" />
+            <enum name="SINGLE_IRREVOCABLY" value="3" />
+            <enum name="MULTI" value="4" />
+        </attr>
+
+        <attr name="labelGravity">
+            <!-- Push object to the top of its container, not changing its size. -->
+            <flag name="top" value="0x30" />
+            <!-- Push object to the bottom of its container, not changing its size. -->
+            <flag name="bottom" value="0x50" />
+            <!-- Push object to the left of its container, not changing its size. -->
+            <flag name="left" value="0x03" />
+            <!-- Push object to the right of its container, not changing its size. -->
+            <flag name="right" value="0x05" />
+            <!-- Place object in the vertical center of its container, not changing its size. -->
+            <flag name="center_vertical" value="0x10" />
+            <!-- Grow the vertical size of the object if needed so it completely fills its container. -->
+            <flag name="fill_vertical" value="0x70" />
+            <!-- Place object in the horizontal center of its container, not changing its size. -->
+            <flag name="center_horizontal" value="0x01" />
+            <!-- Grow the horizontal size of the object if needed so it completely fills its container. -->
+            <flag name="fill_horizontal" value="0x07" />
+            <!-- Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. -->
+            <flag name="center" value="0x11" />
+            <!-- Grow the horizontal and vertical size of the object if needed so it completely fills its container. -->
+            <flag name="fill" value="0x77" />
+            <!-- Additional option that can be set to have the top and/or bottom edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the vertical gravity: a top gravity will clip the bottom
+                 edge, a bottom gravity will clip the top edge, and neither will clip both edges. -->
+            <flag name="clip_vertical" value="0x80" />
+            <!-- Additional option that can be set to have the left and/or right edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the horizontal gravity: a left gravity will clip the right
+                 edge, a right gravity will clip the left edge, and neither will clip both edges. -->
+            <flag name="clip_horizontal" value="0x08" />
+            <!-- Push object to the beginning of its container, not changing its size. -->
+            <flag name="start" value="0x00800003" />
+            <!-- Push object to the end of its container, not changing its size. -->
+            <flag name="end" value="0x00800005" />
+        </attr>
+
+        <attr name="maxSelect" format="integer" />
+        <attr name="minSelect" format="integer" />
+        <attr name="maxLines" format="integer" />
+        <attr name="maxColumns" format="integer" />
+        <attr name="isIndicator" format="boolean" />
+        <attr name="labelTextColor" format="reference|color" />
+        <attr name="labelTextSize" format="dimension" />
+        <attr name="labelTextWidth" format="dimension">
+            <enum name="fill_parent" value="-1" />
+            <enum name="match_parent" value="-1" />
+            <enum name="wrap_content" value="-2" />
+        </attr>
+        <attr name="labelTextHeight" format="dimension">
+            <enum name="fill_parent" value="-1" />
+            <enum name="match_parent" value="-1" />
+            <enum name="wrap_content" value="-2" />
+        </attr>
+        <attr name="labelTextPadding" format="dimension" />
+        <attr name="labelTextPaddingLeft" format="dimension" />
+        <attr name="labelTextPaddingTop" format="dimension" />
+        <attr name="labelTextPaddingRight" format="dimension" />
+        <attr name="labelTextPaddingBottom" format="dimension" />
+        <attr name="lineMargin" format="dimension" />
+        <attr name="wordMargin" format="dimension" />
+        <attr name="labelBackground" format="reference|color" />
+        <attr name="singleLine" format="boolean" />
+        <attr name="isTextBold" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomXORLayout">
+
+        <attr name="cam_scan_radius" format="dimension"></attr>
+        <attr name="cam_scan_margin_top" format="dimension"></attr>
+        <attr name="cam_scan_strike_size" format="dimension"></attr>
+        <attr name="cam_scan_strike_color" format="color"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="ShadowLayout">
+        <!-- 1、关于阴影 -->
+        <!--阴影：是否要显示阴影，可能有只想用shape和selector功能，不想要阴影-->
+        <attr name="hl_shadowHidden" format="boolean" />
+        <!--阴影：阴影颜色-->
+        <attr name="hl_shadowColor" format="color" />
+        <!--阴影：阴影的扩散范围(也可以理解为扩散程度)-->
+        <attr name="hl_shadowLimit" format="dimension" />
+        <!--控件区域是否对称，默认是对称。不对称的话，那么控件区域随着阴影区域走-->
+        <attr name="hl_shadowSymmetry" format="boolean" />
+        <!--阴影：x轴的偏移量-->
+        <attr name="hl_shadowOffsetX" format="dimension" />
+        <!--阴影：y轴的偏移量-->
+        <attr name="hl_shadowOffsetY" format="dimension" />
+        <!--阴影：左边是否隐藏阴影-->
+        <attr name="hl_shadowHiddenLeft" format="boolean" />
+        <!--阴影：右边是否隐藏阴影-->
+        <attr name="hl_shadowHiddenRight" format="boolean" />
+        <!--阴影：上边是否隐藏阴影-->
+        <attr name="hl_shadowHiddenTop" format="boolean" />
+        <!--阴影：下面是否隐藏阴影-->
+        <attr name="hl_shadowHiddenBottom" format="boolean" />
+
+
+        <!-- 2、关于圆角 -->
+        <!--圆角：统一大小，其中包括了阴影，shape、背景图、stroke边框圆角-->
+        <attr name="hl_cornerRadius" format="dimension" />
+        <!--圆角：左上圆角。设置后会忽略hl_cornerRadius的值-->
+        <attr name="hl_cornerRadius_leftTop" format="dimension" />
+        <!--圆角：右上圆角。同上-->
+        <attr name="hl_cornerRadius_rightTop" format="dimension" />
+        <!--圆角：左下圆角。同上-->
+        <attr name="hl_cornerRadius_leftBottom" format="dimension" />
+        <!--圆角：右下圆角。同上-->
+        <attr name="hl_cornerRadius_rightBottom" format="dimension" />
+
+
+        <!-- 3、关于shape及selector -->
+        <!-- shape及selector样式：pressed、sectored -->
+        <attr name="hl_shapeMode">
+            <enum name="pressed" value="1" />
+            <enum name="selected" value="2" />
+            <enum name="ripple" value="3" />
+        </attr>
+
+        <!-- 为false的默认背景，可单独使用-->
+        <attr name="hl_layoutBackground" format="reference|color" />
+        <!-- 为true的默认背景，必须搭配hl_layoutBackground属性使用。否则报错-->
+        <attr name="hl_layoutBackground_true" format="reference|color" />
+
+        <!-- stroke样式，stroke的宽度-->
+        <attr name="hl_strokeWith" format="dimension" />
+        <!-- 为false时，默认的stoke颜色值，可单独使用-->
+        <attr name="hl_strokeColor" format="color" />
+        <!-- 为true时，默认的stoke颜色值，必须搭配hl_strokeColor属性使用。否则报错-->
+        <attr name="hl_strokeColor_true" format="color" />
+
+
+        <!-- 这里最终舍弃了系统clickable的方案，因为系统系统主动设置setOnClickListener后，会主动设置成true,所以这里采用自定义 -->
+        <attr name="clickable" format="boolean" />
+        <!-- hl_clickable为false时，要展示的图片或颜色-->
+        <attr name="hl_layoutBackground_clickFalse" format="reference|color" />
+
+
+        <!-- 4、关于填充的渐变色 -->
+        <!-- 要知道，如果设置了渐变色。那么将以渐变色为主。hl_layoutBackground属性将无效 -->
+        <!-- 渐变的起始颜色 -->
+        <attr name="hl_startColor" format="color" />
+        <!-- 渐变的中间颜色 -->
+        <attr name="hl_centerColor" format="color" />
+        <!-- 渐变的终止颜色 -->
+        <attr name="hl_endColor" format="color" />
+        <!-- 渐变角度，默认值为0-->
+        <attr name="hl_angle" format="integer" />
+
+
+        <!-- 5、绑定一个TextView，在点击按钮时，有可能有颜色变化 -->
+        <attr name="hl_bindTextView" format="reference" />
+        <attr name="hl_textColor" format="color" />
+        <attr name="hl_textColor_true" format="color" />
+        <attr name="hl_text" format="string" />
+        <attr name="hl_text_true" format="string" />
+
+
+    </declare-styleable>
+</resources>

@@ -1,0 +1,124 @@
+ext {
+
+    android = [
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.3",
+            applicationId    : "com.robin.mapdemo",
+            minSdkVersion    : 21,
+            targetSdkVersion : 29,
+            versionCode      : 1,
+            versionName      : "1.0.0",
+    ]
+
+    depsVersion = [
+            retrofitVersion             : '2.9.0',
+            converterGsonVersion        : '2.9.0',
+            gsonVersion                 : '2.8.6',
+            coroutinesVersion           : '1.4.2',
+            loggingInterceptorVersion   : '4.0.0',
+            lifecycleViewmodelKtxVersion: '2.2.0',
+            glideVersion                : '4.11.0',
+            bannerVersion               : '2.0.8',
+            refreshVersion              : '1.1.2',
+            koinVersion                 : '2.2.2',
+            arouterApiVersion           : '1.5.0',
+            arouterCompilerVersion      : '1.2.2',
+            mmkvVersion                 : '1.1.1',
+            viewPager2Veriosn           : '1.0.0',
+            kotlinReflectVersion        : '1.3.71',
+            lifecycleVersion            : '2.3.0',
+            navigationVersion           : '2.3.3',
+            materialDiagVersion         : '3.3.0',
+    ]
+
+    depsLibs = [
+
+            appcompat            : 'androidx.appcompat:appcompat:1.2.0',
+            coreKtx              : 'androidx.core:core-ktx:1.3.2',
+            material             : 'com.google.android.material:material:1.3.0',
+            cardView             : 'androidx.cardview:cardview:1.0.0',
+            fragmentKtx          : 'androidx.fragment:fragment-ktx:1.2.5',
+            multiDex             : 'com.android.support:multidex:1.0.3',
+            constraintlayout     : 'androidx.constraintlayout:constraintlayout:1.1.3',
+            lifecycleRuntime     : "androidx.lifecycle:lifecycle-runtime-ktx:${depsVersion.lifecycleVersion}",
+            lifecycleCommon      : "androidx.lifecycle:lifecycle-common-java8:${depsVersion.lifecycleVersion}",
+            lifecycleExt         : "androidx.lifecycle:lifecycle-extensions:2.2.0",
+            liveData             : "androidx.lifecycle:lifecycle-livedata-ktx:${depsVersion.lifecycleVersion}",
+            navigationFragment   : "androidx.navigation:navigation-fragment:${depsVersion.navigationVersion}",
+            navigationUi         : "androidx.navigation:navigation-ui:${depsVersion.navigationVersion}",
+            navigationFragmentKtx: "androidx.navigation:navigation-fragment-ktx:${depsVersion.navigationVersion}",
+            navigationUiKtx      : "androidx.navigation:navigation-ui-ktx:${depsVersion.navigationVersion}",
+            junit                : 'junit:junit:4.12',
+            extJunit             : 'androidx.test.ext:junit:1.1.0',
+            espressoCore         : 'androidx.test.espresso:espresso-core:3.1.1',
+
+            //网络请求
+            retrofit             : "com.squareup.retrofit2:retrofit:${depsVersion.retrofitVersion}",
+            converterGson        : "com.squareup.retrofit2:converter-gson:${depsVersion.converterGsonVersion}",
+            gson                 : "com.google.code.gson:gson:${depsVersion.gsonVersion}",
+            loggingInterceptor   : "com.squareup.okhttp3:logging-interceptor:${depsVersion.loggingInterceptorVersion}",
+            retrofitUrlManager   : "me.jessyan:retrofit-url-manager:1.4.0",
+
+            //使用协程
+            coroutines           : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${depsVersion.coroutinesVersion}",
+
+            //viewmodel中使用viewmodelScope
+            lifecycleViewmodelKtx: "androidx.lifecycle:lifecycle-viewmodel-ktx:${depsVersion.lifecycleViewmodelKtxVersion}",
+            paging               : "androidx.paging:paging-runtime-ktx:3.0.0-alpha07",
+
+            glide                : "com.github.bumptech.glide:glide:${depsVersion.glideVersion}",
+
+            banner               : "com.youth.banner:banner:${depsVersion.bannerVersion}",
+
+            SmartRefreshLayout   : "com.scwang.smartrefresh:SmartRefreshLayout:${depsVersion.refreshVersion}",
+
+
+            // Koin AndroidX Scope feature
+            koinScop             : "org.koin:koin-androidx-scope:${depsVersion.koinVersion}",
+
+            // Koin AndroidX ViewModel feature
+            KoinViewModel        : "org.koin:koin-androidx-viewmodel:${depsVersion.koinVersion}",
+
+            // Koin AndroidX Fragment Factory (unstable version)
+            koinFragmet          : "org.koin:koin-androidx-fragment:${depsVersion.koinVersion}",
+
+            //arouter
+            aroutreApi           : "com.alibaba:arouter-api:${depsVersion.arouterApiVersion}",
+
+            arouterCompiler      : "com.alibaba:arouter-compiler:${depsVersion.arouterCompilerVersion}",
+
+            //数据存储
+            mmkv                 : "com.tencent:mmkv-static:${depsVersion.mmkvVersion}",
+
+            //viewpager2
+            viewPager2           : "androidx.viewpager2:viewpager2:${depsVersion.viewPager2Veriosn}",
+
+            kotlinReflect        : "org.jetbrains.kotlin:kotlin-reflect:${depsVersion.kotlinReflectVersion}",
+
+            PersistentCookieJar  : "com.github.franmontiel:PersistentCookieJar:v1.0.1",
+
+            util                 : 'com.blankj:utilcodex:1.29.0',
+            magicIndicator       : 'com.github.hackware1993:MagicIndicator:1.6.0',
+            baseAdapter          : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4',
+            swipeRecycleView     : 'com.yanzhenjie.recyclerview:x:1.3.2',
+            loadSir              : 'com.kingja.loadsir:loadsir:1.3.6',
+            autoSize             : 'me.jessyan:autosize:1.2.1',
+            calendarView         : 'com.haibin:calendarview:3.6.9',
+            permission           : 'com.yanzhenjie:permission:2.0.3',
+            dialogLifecycle      : "com.afollestad.material-dialogs:lifecycle:${depsVersion.materialDiagVersion}",
+            dialogCore           : "com.afollestad.material-dialogs:core:${depsVersion.materialDiagVersion}",
+            dialogColor          : "com.afollestad.material-dialogs:color:${depsVersion.materialDiagVersion}",
+            dialogDateTime       : "com.afollestad.material-dialogs:datetime:${depsVersion.materialDiagVersion}",
+            dialogBottomSheets   : "com.afollestad.material-dialogs:bottomsheets:${depsVersion.materialDiagVersion}",
+            bottomBar            : 'com.github.ittianyu:BottomNavigationViewEx:2.0.4',
+            download             : 'com.download.library:Downloader:4.1.3',
+            lottie               : 'com.airbnb.android:lottie:3.4.0',
+            immersionbar         : 'com.gyf.immersionbar:immersionbar:3.0.0',
+            zxingLite            : 'com.king.zxing:zxing-lite:1.1.9-androidx',
+            pickerView           : 'com.contrarywind:Android-PickerView:4.1.9',
+            androidanimations    : 'com.daimajia.androidanimations:library:2.4@aar',
+            customOnCrash        : 'cat.ereza:customactivityoncrash:2.3.0',
+            basePopup            : 'com.github.razerdp:BasePopup:2.2.10',
+    ]
+
+}

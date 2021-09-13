@@ -1,0 +1,86 @@
+import com.controller.version.plugin.*
+plugins{
+    id 'com.controller.version.plugin'
+}
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+android {
+    compileSdkVersion BuildVersions.compileSdkVersion
+    buildToolsVersion BuildVersions.buildToolsVersion
+    defaultConfig {
+        minSdkVersion BuildVersions.minSdkVersion
+        targetSdkVersion BuildVersions.targetSdkVersion
+        versionCode 17
+        versionName "1.1.7"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly Dependencies.appcompat
+    //kotlin
+    compileOnly Dependencies.kotlinLibrary
+    compileOnly Dependencies.coreKtx
+    //lifecycle
+    compileOnly Dependencies.lifecycleKtx
+    api Dependencies.lifecycleJava8
+    compileOnly Dependencies.lifecycleProcess
+//    compileOnly Dependencies.lifecycleExtension
+    // viewModel
+    compileOnly Dependencies.viewModelKtx
+    compileOnly Dependencies.activityKtx
+    //fragment
+    compileOnly Dependencies.fragmentKtx
+    // liveData
+    compileOnly Dependencies.livedataKtx
+    //paging
+    compileOnly Dependencies.paging
+    //navigation
+    //compileOnly rootProject.depsLibs.navigationFragment
+    //compileOnly rootProject.depsLibs.navigationUi
+    compileOnly Dependencies.navigationFragmentKtx
+    compileOnly Dependencies.navigationUiKtx
+    //retrofit
+    compileOnly Dependencies.retrofit
+    compileOnly Dependencies.retrofitGson
+    compileOnly Dependencies.PersistentCookieJar
+    //动态替换BaseUrl库 使用可参考 https://github.com/JessYanCoding/RetrofitUrlManager
+    compileOnly Dependencies.retrofitUrlManager
+    //compileOnly rootProject.depsLibs.gson
+    //baseAdapter
+    compileOnly Dependencies.baseAdapter
+    //blankUtils
+    compileOnly Dependencies.utils
+    //download
+    compileOnly Dependencies.download
+    compileOnly(Dependencies.fileDownloader) {
+        exclude group: "com.android.support"
+    }
+    compileOnly Dependencies.mmkv
+
+
+}
+
