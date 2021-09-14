@@ -4,6 +4,8 @@ package com.robin.mapdemo
 import android.os.Process
 import androidx.multidex.MultiDex
 import cat.ereza.customactivityoncrash.config.CaocConfig
+import com.baidu.mapapi.CoordType
+import com.baidu.mapapi.SDKInitializer
 import com.kingja.loadsir.callback.SuccessCallback
 import com.kingja.loadsir.core.LoadSir
 import com.robin.commonUi.loadCallBack.EmptyCallback
@@ -22,6 +24,7 @@ class App : BaseApp() {
     override fun onCreate() {
         super.onCreate()
         MultiDex.install(this)
+        initBaidu()
         MMKV.initialize(this.filesDir.absolutePath + "/mmkv")
         //界面加载管理 初始化
         LoadSir.beginBuilder()
@@ -57,5 +60,13 @@ class App : BaseApp() {
             .errorActivity(ErrorActivity::class.java) //发生错误跳转的activity
             .eventListener(null) //允许你指定事件侦听器，以便在库显示错误活动 default: null
             .apply()
+    }
+
+    //Badiu地图初始化
+    private fun initBaidu() {
+        SDKInitializer.initialize(this)
+        //自4.3.0起，百度地图SDK所有接口均支持百度坐标和国测局坐标，用此方法设置您使用的坐标类型.
+        //包括BD09LL和GCJ02两种坐标，默认是BD09LL坐标。
+        SDKInitializer.setCoordType(CoordType.BD09LL)
     }
 }

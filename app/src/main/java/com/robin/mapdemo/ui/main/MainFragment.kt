@@ -6,9 +6,12 @@ import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.robin.commonUi.util.ResUtils
 import com.robin.jetpackmvvm.ext.nav
 import com.robin.jetpackmvvm.ext.navigateAction
 import com.robin.jetpackmvvm.ext.view.clickNoRepeat
+import com.robin.jetpackmvvm.ext.view.gone
+import com.robin.jetpackmvvm.ext.view.setRoundRectBg
 import com.robin.mapdemo.R
 import com.robin.mapdemo.app.base.BaseFragment
 import com.robin.mapdemo.databinding.FragmentMainBinding
@@ -34,6 +37,9 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
         mDataBinding.tvBaidu.setOnClickListener {
             nav().navigateAction(R.id.action_main_to_baiduFragment)
         }
+        //Test setRoundRectBg Api
+        mDataBinding.tvTestExt.setRoundRectBg(ResUtils.getColor(R.color.chinaHoliday), 12f)
+        mDataBinding.tvTestExt.gone()
         if (!allPermissionsGranted()) {
             AndPermission.with(this)
                 .runtime()

@@ -46,6 +46,9 @@
             android:name="com.amap.api.v2.apikey"
             android:value="a97f670370e11fac23391c2d8bcc80f9"></meta-data>
 
+        <service android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"/>
         <!--百度地图key-->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"

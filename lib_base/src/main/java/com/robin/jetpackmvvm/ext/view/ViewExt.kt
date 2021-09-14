@@ -5,9 +5,11 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.GradientDrawable
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
+import androidx.annotation.ColorInt
 
 /**
  * 设置view显示
@@ -51,6 +53,25 @@ fun View.visibleOrInvisible(flag: Boolean) {
  */
 fun View.gone() {
     visibility = View.GONE
+}
+
+/**
+ * 快捷设置View的自定义纯色带圆角背景
+ *
+ * @receiver View
+ * @param color Int 颜色值
+ * @param cornerRadius Float 圆角 单位px
+ */
+fun View.setRoundRectBg(
+    @ColorInt color: Int,
+    cornerRadius: Float = 15F
+) {
+    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+        background = GradientDrawable().apply {
+            setColor(color)
+            setCornerRadius(cornerRadius)
+        }
+    }
 }
 
 /**
