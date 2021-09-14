@@ -1,6 +1,5 @@
 package com.robin.mapdemo.app.amap
 
-import android.content.Context
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import com.amap.api.maps.MapView

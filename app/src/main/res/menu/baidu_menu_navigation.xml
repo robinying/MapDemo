@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:bbn_itemColorActive="@color/blue_end"
+    app:bbn_itemColorInactive="#AA4C4646"
+    app:bbn_rippleColor="@color/colorAccent">
+    <item
+        android:id="@+id/menu_1"
+        android:checked="true"
+        android:icon="@drawable/ic_poi"
+        android:title="POI" />
+
+    <item
+        android:id="@+id/menu_2"
+        android:icon="@drawable/ic_route"
+        android:title="Route" />
+
+    <item
+        android:id="@+id/menu_3"
+        android:icon="@drawable/ic_route"
+        android:title="Tool" />
+
+</menu>
