@@ -26,6 +26,14 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
 
+        <action
+            android:id="@+id/action_main_to_viewPagerTestFragment"
+            app:destination="@id/viewPagerTestFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
 
     </fragment>
 
@@ -50,6 +58,12 @@
             app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
+
+    <fragment
+        android:id="@+id/viewPagerTestFragment"
+        android:name="com.robin.mapdemo.ui.view_pager.ViewPagerTestFragment"
+        android:label="ViewPagerTestFragment"
+        tools:layout="@layout/fragment_view_pager_test" />
 
     <fragment
         android:id="@+id/baiduViewPagerFragment"

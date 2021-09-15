@@ -38,8 +38,11 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
             nav().navigateAction(R.id.action_main_to_baiduFragment)
         }
         //Test setRoundRectBg Api
-        mDataBinding.tvTestExt.setRoundRectBg(ResUtils.getColor(R.color.chinaHoliday), 12f)
-        mDataBinding.tvTestExt.gone()
+        mDataBinding.tvViewPager.setRoundRectBg(ResUtils.getColor(R.color.chinaHoliday), 12f)
+        mDataBinding.tvViewPager.setOnClickListener {
+            nav().navigateAction(R.id.action_main_to_viewPagerTestFragment)
+
+        }
         if (!allPermissionsGranted()) {
             AndPermission.with(this)
                 .runtime()

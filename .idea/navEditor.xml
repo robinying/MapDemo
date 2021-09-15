@@ -13,8 +13,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-441" />
-                            <option name="y" value="199" />
+                            <option name="x" value="-502" />
+                            <option name="y" value="197" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -29,6 +29,15 @@
                             <option name="y" value="550" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_baidu_to_view_pager">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -37,8 +46,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="259" />
-                            <option name="y" value="-28" />
+                            <option name="x" value="-162" />
+                            <option name="y" value="534" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -65,7 +74,24 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_main_to_viewPagerTestFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="viewPagerTestFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-528" />
+                            <option name="y" value="-176" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>
