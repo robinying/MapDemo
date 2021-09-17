@@ -130,7 +130,6 @@ class TabLayoutDemoFragment : BaseFragment<BaseViewModel, FragmentTabLayoutDemoB
             }
 
 
-
         }
         //ViewPager2Delegate.install(mDataBinding.viewPager, mDataBinding.tabLayout2)
         mDataBinding.tabLayout2.updateTabBadge(1){

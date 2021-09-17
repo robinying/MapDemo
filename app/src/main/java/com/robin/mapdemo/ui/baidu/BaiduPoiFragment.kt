@@ -17,13 +17,21 @@ import com.blankj.utilcode.util.LogUtils
 import com.baidu.mapapi.search.poi.PoiDetailSearchOption
 import com.robin.mapdemo.app.badiu.BaiduMapUtil
 import com.baidu.mapapi.map.OverlayOptions
+import com.baidu.mapapi.search.busline.BusLineSearch
+import com.baidu.mapapi.search.core.PoiInfo
 import com.robin.commonUi.util.ResUtils
+import com.baidu.mapapi.search.busline.BusLineSearchOption
+import com.robin.mapdemo.widget.overlayutil.BusLineOverlay
+import com.baidu.mapapi.search.weather.WeatherDataType
+
+import com.baidu.mapapi.search.weather.WeatherSearchOption
 
 
 class BaiduPoiFragment : BaseFragment<BaseViewModel, FragmentBaiduPoiBinding>() {
     private lateinit var mMapView: MapView
     private lateinit var mBaiduMap: BaiduMap
     private lateinit var mPoiSearch: PoiSearch
+    private lateinit var mBusLineSearch: BusLineSearch
     private val markerBitmap by lazy(LazyThreadSafetyMode.NONE) {
         BitmapDescriptorFactory.fromResource(
             R.drawable.ic_delicious
@@ -39,17 +47,27 @@ class BaiduPoiFragment : BaseFragment<BaseViewModel, FragmentBaiduPoiBinding>() 
         mBaiduMap = mMapView.map
         lifecycle.addObserver(BaiduLifecycleObserver(mMapView))
         mPoiSearch = PoiSearch.newInstance()
+        mBusLineSearch = BusLineSearch.newInstance()
         mPoiSearch.setOnGetPoiSearchResultListener(object : OnGetPoiSearchResultListener {
             override fun onGetPoiResult(poiResult: PoiResult?) {
                 poiResult?.let {
                     if (it.allPoi.isNotEmpty()) {
                         //val poi = it.allPoi.first()
                         for (poi in it.allPoi) {
-                            LogUtils.d("robinTest,poi:${GsonUtils.toJson(poi)}")
-                            mPoiSearch.searchPoiDetail(
-                                PoiDetailSearchOption()
-                                    .poiUids(poi.uid)
-                            )
+                            LogUtils.d("robinTest,poi type:${poi.type}")
+                            if (poi.name.contains("157路")) {
+                                mBusLineSearch.searchBusLine(
+                                    BusLineSearchOption()
+                                        .city("宁波")
+                                        .uid(poi.uid)
+                                )
+                                break
+                            } else {
+                                mPoiSearch.searchPoiDetail(
+                                    PoiDetailSearchOption()
+                                        .poiUids(poi.uid)
+                                )
+                            }
                         }
                     }
                     LogUtils.d("robinTest, poiResult size:${it.allPoi.size}")
@@ -79,22 +97,35 @@ class BaiduPoiFragment : BaseFragment<BaseViewModel, FragmentBaiduPoiBinding>() 
 
             }
         })
+        mBusLineSearch.setOnGetBusLineSearchResultListener {
+            if (it == null || it.error != SearchResult.ERRORNO.NO_ERROR) {
+                return@setOnGetBusLineSearchResultListener
+            }
+            LogUtils.d("robinTest busResult:${GsonUtils.toJson(it)}")
+            val busLineOverlay = BusLineOverlay(mBaiduMap)
+            busLineOverlay.setData(it)
+            busLineOverlay.addToMap()
+            busLineOverlay.zoomToSpan()
+
+        }
     }
 
     override fun lazyLoadData() {
         super.lazyLoadData()
-        mPoiSearch.searchInCity(
-            PoiCitySearchOption()
-                .city("宁波") //必填
-                .keyword("美食") //必填
-                .pageNum(0)
-                .pageCapacity(10)
-        )
+//        mPoiSearch.searchInCity(
+//            PoiCitySearchOption()
+//                .city("宁波") //必填
+//                .keyword("美食") //必填
+//                .pageNum(0)
+//                .pageCapacity(10)
+//        )
+        searchBus()
     }
 
     override fun onDestroy() {
         super.onDestroy()
         mPoiSearch.destroy()
+        mBusLineSearch.destroy()
         markerBitmap.recycle()
     }
 
@@ -122,5 +153,17 @@ class BaiduPoiFragment : BaseFragment<BaseViewModel, FragmentBaiduPoiBinding>() 
         //在地图上显示文字覆盖物
         val mText = mBaiduMap.addOverlay(mTextOptions)
     }
+
+    private fun searchBus() {
+        //TODO 目前搜索公交路径返回type为null
+        mPoiSearch.searchInCity(
+            PoiCitySearchOption()
+                .city("宁波")
+                .tag("bus")
+                .keyword("157")
+                .scope(2)
+        )
+    }
+
 
 }

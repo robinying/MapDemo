@@ -15,6 +15,10 @@ import com.baidu.mapapi.search.district.DistrictResult
 import com.baidu.mapapi.search.district.DistrictSearch
 import com.baidu.mapapi.search.district.DistrictSearchOption
 import com.baidu.mapapi.search.district.OnGetDistricSearchResultListener
+import com.baidu.mapapi.search.weather.WeatherDataType
+import com.baidu.mapapi.search.weather.WeatherSearch
+import com.baidu.mapapi.search.weather.WeatherSearchOption
+import com.blankj.utilcode.util.GsonUtils
 import com.blankj.utilcode.util.LogUtils
 import com.robin.commonUi.customview.actionbar.TitleBar
 import com.robin.commonUi.util.ResUtils
@@ -41,9 +45,16 @@ class BaiduFragment : BaseFragment<BaiduViewModel, FragmentBaiduBinding>() {
         )
     }
     private var mMarker: Marker? = null
+    private val weatherSearchOption by lazy{ WeatherSearchOption() }
+    private lateinit var mWeatherSearch: WeatherSearch
     override fun layoutId() = R.layout.fragment_baidu
 
     override fun initView(savedInstanceState: Bundle?) {
+        mWeatherSearch = WeatherSearch.newInstance()
+        mWeatherSearch.setWeatherSearchResultListener {
+            LogUtils.d("robinTest,weatherResult:${GsonUtils.toJson(it)}")
+
+        }
         mDataBinding.titleBar.addAction(object : TitleBar.TextAction("Action") {
             override fun performAction(view: View?) {
                 nav().navigateAction(R.id.action_baidu_to_view_pager)
@@ -70,6 +81,9 @@ class BaiduFragment : BaseFragment<BaiduViewModel, FragmentBaiduBinding>() {
                     mMarker?.let { marker ->
                         mViewModel.markerList.add(marker)
                     }
+                    //这种获取天气的需要开工单获取权限
+                    weatherSearchOption.location(latLng)
+                    mWeatherSearch.request(weatherSearchOption)
                 }
             }
 
@@ -78,6 +92,7 @@ class BaiduFragment : BaseFragment<BaiduViewModel, FragmentBaiduBinding>() {
             }
 
         })
+        weatherSearchOption.weatherDataType(WeatherDataType.WEATHER_DATA_TYPE_ALL)
         //customMyLocation()
         lifecycle.addObserver(BaiduLifecycleObserver(mapView))
         mDistrictSearch = DistrictSearch.newInstance()
@@ -104,6 +119,7 @@ class BaiduFragment : BaseFragment<BaiduViewModel, FragmentBaiduBinding>() {
         super.onDestroy()
         mBaiduMap.isMyLocationEnabled = false
         markerBitmap.recycle()
+        mWeatherSearch.destroy()
         stopLocation()
     }
 
@@ -226,4 +242,5 @@ class BaiduFragment : BaseFragment<BaiduViewModel, FragmentBaiduBinding>() {
     private fun clearAll() {
         mBaiduMap.clear()
     }
+
 }
