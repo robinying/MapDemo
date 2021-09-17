@@ -51,6 +51,7 @@ object Versions {
     const val espresso = "3.2.0"
     const val robolectric = "3.3.2"
     const val koin ="2.2.2"
+    const val dslTabLayout ="3.0.0"
 }
 
 
@@ -215,4 +216,7 @@ object Dependencies {
     const val espressoIdlingResource = "androidx.test.espresso:espresso-idling-resource:3.2.0"
     const val testRunner = "androidx.test:runner:1.1.0"
     const val testRules = "androidx.test:rules:1.1.0"
+
+    const val dslTabLayout ="com.github.angcyo.DslTablayout:TabLayout:${Versions.dslTabLayout}"
+    const val dslViewPager2Delegate ="com.github.angcyo.DslTablayout:ViewPager2Delegate:${Versions.dslTabLayout}"
 }

@@ -7,15 +7,16 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:orientation="vertical">
 
         <com.robin.commonUi.customview.actionbar.TitleBar
             android:id="@+id/title_bar"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            app:layout_constraintTop_toTopOf="parent"
             app:tb_titleText="地图使用"
             app:tb_useThemeColor="true" />
 
@@ -31,10 +32,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/text_small"
             app:backgroundColor="@color/colorAccent"
-            app:corner_radius="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_bar" />
+            app:corner_radius="2dp" />
 
         <com.robin.commonUi.customview.textview.DPTextView
             android:id="@+id/tv_baidu"
@@ -48,10 +46,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/text_small"
             app:backgroundColor="@color/colorAccent"
-            app:corner_radius="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_amap" />
+            app:corner_radius="2dp" />
 
         <TextView
             android:id="@+id/tv_view_pager"
@@ -60,10 +55,35 @@
             android:layout_marginTop="12dp"
             android:padding="4dp"
             android:text="Test round"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_baidu" />
+            android:textColor="@color/white" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.robin.commonUi.customview.textview.DPTextView
+            android:id="@+id/tv_tab_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginTop="16dp"
+            android:alpha=".8"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="TabLayout"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_small"
+            app:backgroundColor="@color/colorAccent"
+            app:corner_radius="4dp" />
+
+        <com.robin.commonUi.customview.textview.DPTextView
+            android:id="@+id/tv_test_transact"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginTop="16dp"
+            android:alpha=".8"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="Test Transact"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_small"
+            app:backgroundColor="#30D312"
+            app:corner_radius="4dp" />
+
+    </LinearLayout>
 </layout>

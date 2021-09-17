@@ -34,7 +34,13 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
 
-
+        <action
+            android:id="@+id/action_main_to_tabLayoutDemoFragment"
+            app:destination="@id/tabLayoutDemoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -70,4 +76,10 @@
         android:name="com.robin.mapdemo.ui.baidu.BaiduViewPagerFragment"
         android:label="BaiduViewPagerFragment"
         tools:layout="@layout/fragment_baidu_view_pager" />
+
+    <fragment
+        android:id="@+id/tabLayoutDemoFragment"
+        android:name="com.robin.mapdemo.ui.tab.TabLayoutDemoFragment"
+        android:label="TabLayoutDemoFragment"
+        tools:layout="@layout/fragment_tab_layout_demo" />
 </navigation>
