@@ -47,7 +47,15 @@
         android:id="@+id/amapFragment"
         android:name="com.robin.mapdemo.ui.amap.AMapFragment"
         android:label="AMapFragment"
-        tools:layout="@layout/fragment_amap" />
+        tools:layout="@layout/fragment_amap" >
+        <action
+            android:id="@+id/action_amap_to_view_pager"
+            app:destination="@id/amapViewPagerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 
 
     <fragment
@@ -77,6 +85,12 @@
         android:label="BaiduViewPagerFragment"
         tools:layout="@layout/fragment_baidu_view_pager" />
 
+
+    <fragment
+        android:id="@+id/amapViewPagerFragment"
+        android:name="com.robin.mapdemo.ui.amap.AmapViewPagerFragment"
+        android:label="AmapViewPagerFragment"
+        tools:layout="@layout/fragment_amap_view_pager" />
     <fragment
         android:id="@+id/tabLayoutDemoFragment"
         android:name="com.robin.mapdemo.ui.tab.TabLayoutDemoFragment"

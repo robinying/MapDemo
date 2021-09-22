@@ -17,6 +17,8 @@ import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.robin.commonUi.customview.actionbar.TitleBar
 import com.robin.commonUi.util.ResUtils
+import com.robin.jetpackmvvm.ext.nav
+import com.robin.jetpackmvvm.ext.navigateAction
 import com.robin.mapdemo.R
 import com.robin.mapdemo.app.amap.AmapLifecycleObserver
 import com.robin.mapdemo.app.amap.AmapLocationUtil
@@ -34,7 +36,7 @@ class AMapFragment : BaseFragment<AMapViewModel, FragmentAmapBinding>(),
         val actionsList = TitleBar.ActionList()
         actionsList.add(object : TitleBar.TextAction("More") {
             override fun performAction(view: View?) {
-                ToastUtils.showShort("Guide")
+                nav().navigateAction(R.id.action_amap_to_view_pager)
             }
         })
         mDataBinding.titleBar.addActions(actionsList)

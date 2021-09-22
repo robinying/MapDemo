@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.robin.commonUi.customview.actionbar.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"
+            app:tb_actionTextSize="14sp"
+            app:tb_titleText="高德地图"
+            app:tb_useThemeColor="true" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/title_bar"
+            app:layout_constraintBottom_toTopOf="@id/tab_layout"/>
+
+
+        <com.angcyo.tablayout.DslTabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="50dp"
+            app:tab_indicator_color="@color/colorAccent"
+            app:tab_indicator_drawable="@drawable/indicator_bottom_line"
+            app:tab_indicator_style="STYLE_NONE"
+            app:tab_item_is_equ_width="true"
+            app:tab_select_color="@color/colorAccent"
+            app:tab_deselect_color="#A0A0A0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:tab_default_index="1">
+
+            <TextView
+                style="@style/TabCommonItemStyle"
+                android:drawableTop="@drawable/ic_home"
+                android:text="首页" />
+
+            <TextView
+                style="@style/TabCommonItemStyle"
+                android:drawableTop="@drawable/ic_message"
+                android:text="消息" />
+
+            <ImageView
+                style="@style/TabCommonItemStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/ic_add" />
+
+            <TextView
+                style="@style/TabCommonItemStyle"
+                android:drawableTop="@drawable/ic_contact"
+                android:text="联系人" />
+
+            <TextView
+                style="@style/TabCommonItemStyle"
+                android:drawableTop="@drawable/ic_setting"
+                android:text="更多" />
+
+        </com.angcyo.tablayout.DslTabLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
