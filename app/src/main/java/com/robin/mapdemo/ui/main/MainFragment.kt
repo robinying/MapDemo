@@ -68,6 +68,10 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
             intent.putExtra("large_data", ByteArray(500 * 1024))
             startActivity(intent)
         }
+        mDataBinding.tvCamera.clickNoRepeat {
+            nav().navigateAction(R.id.action_main_to_cameraFragment)
+
+        }
         if (!allPermissionsGranted()) {
             AndPermission.with(this)
                 .runtime()

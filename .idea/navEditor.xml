@@ -74,6 +74,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="cameraFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="mainFragment">
                     <value>
                       <LayoutPositions>
@@ -91,6 +103,11 @@
                               </value>
                             </entry>
                             <entry key="action_main_to_baiduFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_main_to_cameraFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
