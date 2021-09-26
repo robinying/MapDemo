@@ -2,6 +2,7 @@ package com.robin.mapdemo.ui.main
 
 import android.Manifest
 import android.animation.ValueAnimator
+import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Looper
@@ -23,6 +24,13 @@ import com.robin.mapdemo.databinding.FragmentMainBinding
 import com.yanzhenjie.permission.AndPermission
 import com.yanzhenjie.permission.runtime.Permission
 import android.content.Intent
+import android.net.Uri
+import android.os.Build
+import android.os.PowerManager
+import android.provider.Settings
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import com.robin.mapdemo.service.ForegroundCoreService
 import com.robin.mapdemo.ui.test.TestTransDataActivity
 
 
@@ -34,11 +42,22 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
         Manifest.permission.CAMERA
     )
 
+    private lateinit var contractsLauncher: ActivityResultLauncher<Intent>
+
     override fun layoutId(): Int {
         return R.layout.fragment_main
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+        contractsLauncher =
+            mActivity.registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { activityResult ->
+                //查询是否开启成功
+                if (mActivity.queryBatteryOptimizeStatus()) {
+                    //忽略电池优化开启成功
+                } else {
+                    //开启失败
+                }
+            }
         mDataBinding.tvAmap.clickNoRepeat {
             nav().navigateAction(R.id.action_main_to_amapFragment)
         }
@@ -72,6 +91,10 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
             nav().navigateAction(R.id.action_main_to_cameraFragment)
 
         }
+        mDataBinding.tvBatterOptimize.clickNoRepeat {
+            startBatteryOptimize()
+
+        }
         if (!allPermissionsGranted()) {
             AndPermission.with(this)
                 .runtime()
@@ -102,6 +125,25 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
         Looper.myQueue().addIdleHandler {
             LogUtils.d("robinTest addIdleHandler")
             false
+        }
+        val intent = Intent(mActivity, ForegroundCoreService::class.java)
+        mActivity.startService(intent)
+    }
+
+    private fun startBatteryOptimize() {
+        val intent = Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS)
+        intent.data = Uri.parse("package:${mActivity.packageName}")
+        //启动忽略电池优化，会弹出一个系统的弹框，我们在上面的
+        contractsLauncher.launch(intent)
+    }
+
+
+    private fun Context.queryBatteryOptimizeStatus(): Boolean {
+        val powerManager = getSystemService(Context.POWER_SERVICE) as PowerManager?
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            powerManager?.isIgnoringBatteryOptimizations(packageName) ?: false
+        } else {
+            true
         }
     }
 }
