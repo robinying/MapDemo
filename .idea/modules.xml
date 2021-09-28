@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MapDemo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MapDemo.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_base/MapDemo.lib_base.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_base/MapDemo.lib_base.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_common_ui/MapDemo.lib_common_ui.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_common_ui/MapDemo.lib_common_ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libusbcamera/MapDemo.libusbcamera.iml" filepath="$PROJECT_DIR$/.idea/modules/libusbcamera/MapDemo.libusbcamera.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/versionPlugin/versionPlugin.iml" filepath="$PROJECT_DIR$/.idea/modules/versionPlugin/versionPlugin.iml" />
     </modules>
   </component>

@@ -49,6 +49,15 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+
+
+        <action
+            android:id="@+id/action_main_to_usbFragment"
+            app:destination="@id/usbFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -110,4 +119,10 @@
         android:name="com.robin.mapdemo.ui.test.CameraFragment"
         android:label="CameraFragment"
         tools:layout="@layout/fragment_camera" />
+
+    <fragment
+        android:id="@+id/usbFragment"
+        android:name="com.robin.mapdemo.ui.usb.UsbFragment"
+        android:label="UsbFragment"
+        tools:layout="@layout/fragment_usb" />
 </navigation>

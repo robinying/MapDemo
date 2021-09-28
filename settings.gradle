@@ -1,4 +1,4 @@
-include ':lib_base',':lib_common_ui'
+include ':lib_base',':lib_common_ui',':libusbcamera'
 include ':app'
 includeBuild 'versionPlugin'
 rootProject.name = "MapDemo"

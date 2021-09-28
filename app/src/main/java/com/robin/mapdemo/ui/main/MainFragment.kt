@@ -32,11 +32,13 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.robin.mapdemo.service.ForegroundCoreService
 import com.robin.mapdemo.ui.test.TestTransDataActivity
+import com.robin.mapdemo.ui.usb.USBCameraActivity
 
 
 class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
     private val REQUEST_CODE_PERMISSIONS = 0xff1
     private val REQUIRED_PERMISSIONS = arrayOf(
+        Manifest.permission.READ_PHONE_STATE,
         Manifest.permission.ACCESS_FINE_LOCATION,
         Manifest.permission.WRITE_EXTERNAL_STORAGE,
         Manifest.permission.CAMERA
@@ -91,14 +93,18 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
             nav().navigateAction(R.id.action_main_to_cameraFragment)
 
         }
-        mDataBinding.tvBatterOptimize.clickNoRepeat {
-            startBatteryOptimize()
+        mDataBinding.tvUsb.clickNoRepeat {
+            nav().navigateAction(R.id.action_main_to_usbFragment)
+//            val intent = Intent(mActivity, USBCameraActivity::class.java)
+//            mActivity.startActivity(intent)
+
 
         }
         if (!allPermissionsGranted()) {
             AndPermission.with(this)
                 .runtime()
                 .permission(
+                    Permission.Group.PHONE,
                     Permission.Group.LOCATION,
                     Permission.Group.STORAGE,
                     Permission.Group.CAMERA
@@ -128,6 +134,7 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
         }
         val intent = Intent(mActivity, ForegroundCoreService::class.java)
         mActivity.startService(intent)
+        mViewModel.activeArcFace()
     }
 
     private fun startBatteryOptimize() {
