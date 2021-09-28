@@ -2,10 +2,10 @@ package com.robin.mapdemo.ui.main
 
 import android.Manifest
 import android.animation.ValueAnimator
+import android.app.RecoverableSecurityException
+import android.content.ContentValues
 import android.content.Context
 import android.content.pm.PackageManager
-import android.os.Bundle
-import android.os.Looper
 import android.view.animation.AccelerateInterpolator
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -24,15 +24,23 @@ import com.robin.mapdemo.databinding.FragmentMainBinding
 import com.yanzhenjie.permission.AndPermission
 import com.yanzhenjie.permission.runtime.Permission
 import android.content.Intent
+import android.content.IntentSender
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
 import android.net.Uri
-import android.os.Build
-import android.os.PowerManager
+import android.os.*
+import android.provider.MediaStore
 import android.provider.Settings
+import android.util.Log
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import com.blankj.utilcode.util.FileUtils
 import com.robin.mapdemo.service.ForegroundCoreService
 import com.robin.mapdemo.ui.test.TestTransDataActivity
 import com.robin.mapdemo.ui.usb.USBCameraActivity
+import com.robin.mapdemo.util.DatetimeUtil
+import java.io.*
 
 
 class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
@@ -153,4 +161,6 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
             true
         }
     }
+
+
 }

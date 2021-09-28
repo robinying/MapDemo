@@ -26,6 +26,8 @@ class UsbFragment : BaseFragment<BaseViewModel, FragmentUsbBinding>() {
 
     override fun initView(savedInstanceState: Bundle?) {
         findUSB()
+        //mDataBinding.loadingView.anim.start()
+        mDataBinding.cameraTestView.anim.start()
     }
 
     private fun findUSB() {
