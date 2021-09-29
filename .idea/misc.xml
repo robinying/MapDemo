@@ -9,6 +9,7 @@
         <entry key="..\:/mycode/MapDemo/app/src/main/res/drawable/indicator_bottom_line.xml" value="0.2125" />
         <entry key="..\:/mycode/MapDemo/app/src/main/res/layout/activity_error.xml" value="0.19635416666666666" />
         <entry key="..\:/mycode/MapDemo/app/src/main/res/layout/activity_test_trans_data.xml" value="0.13802083333333334" />
+        <entry key="..\:/mycode/MapDemo/app/src/main/res/layout/activity_test_vbactivity.xml" value="0.19635416666666666" />
         <entry key="..\:/mycode/MapDemo/app/src/main/res/layout/activity_usbcamera.xml" value="0.19635416666666666" />
         <entry key="..\:/mycode/MapDemo/app/src/main/res/layout/fragment_amap.xml" value="0.1082427536231884" />
         <entry key="..\:/mycode/MapDemo/app/src/main/res/layout/fragment_amap_other.xml" value="0.19635416666666666" />
@@ -27,6 +28,7 @@
         <entry key="..\:/mycode/MapDemo/app/src/main/res/layout/fragment_storage.xml" value="0.13020833333333334" />
         <entry key="..\:/mycode/MapDemo/app/src/main/res/layout/fragment_tab_layout_demo.xml" value="0.19635416666666666" />
         <entry key="..\:/mycode/MapDemo/app/src/main/res/layout/fragment_tab_view.xml" value="0.13697916666666668" />
+        <entry key="..\:/mycode/MapDemo/app/src/main/res/layout/fragment_test_vb.xml" value="0.19635416666666666" />
         <entry key="..\:/mycode/MapDemo/app/src/main/res/layout/fragment_usb.xml" value="0.19635416666666666" />
         <entry key="..\:/mycode/MapDemo/app/src/main/res/layout/fragment_view_pager_test.xml" value="0.15" />
         <entry key="..\:/mycode/MapDemo/app/src/main/res/layout/item_banner.xml" value="0.15" />

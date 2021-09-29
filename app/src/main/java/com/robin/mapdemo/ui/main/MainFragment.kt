@@ -38,6 +38,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.blankj.utilcode.util.FileUtils
 import com.robin.mapdemo.service.ForegroundCoreService
 import com.robin.mapdemo.ui.test.TestTransDataActivity
+import com.robin.mapdemo.ui.test.TestVBActivity
+import com.robin.mapdemo.ui.test.TestVBViewModel
 import com.robin.mapdemo.ui.usb.USBCameraActivity
 import com.robin.mapdemo.util.DatetimeUtil
 import java.io.*
@@ -106,6 +108,12 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
 //            val intent = Intent(mActivity, USBCameraActivity::class.java)
 //            mActivity.startActivity(intent)
 
+
+        }
+        mDataBinding.tvTestVb.clickNoRepeat {
+            //nav().navigateAction(R.id.action_main_to_testVBFragment)
+            val intent = Intent(mActivity, TestVBActivity::class.java)
+            startActivity(intent)
 
         }
         if (!allPermissionsGranted()) {

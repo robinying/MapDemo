@@ -58,13 +58,21 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_to_testVBFragment"
+            app:destination="@id/testVBFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
     </fragment>
 
     <fragment
         android:id="@+id/amapFragment"
         android:name="com.robin.mapdemo.ui.amap.AMapFragment"
         android:label="AMapFragment"
-        tools:layout="@layout/fragment_amap" >
+        tools:layout="@layout/fragment_amap">
         <action
             android:id="@+id/action_amap_to_view_pager"
             app:destination="@id/amapViewPagerFragment"
@@ -125,4 +133,10 @@
         android:name="com.robin.mapdemo.ui.usb.UsbFragment"
         android:label="UsbFragment"
         tools:layout="@layout/fragment_usb" />
+
+    <fragment
+        android:id="@+id/testVBFragment"
+        android:name="com.robin.mapdemo.ui.test.TestVBFragment"
+        android:label="TestVBFragment"
+        tools:layout="@layout/fragment_test_vb" />
 </navigation>
