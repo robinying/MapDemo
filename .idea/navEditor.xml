@@ -117,6 +117,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_main_to_testVBFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_main_to_usbFragment">
                               <value>
                                 <LayoutPositions />
@@ -139,6 +144,18 @@
                           <Point>
                             <option name="x" value="-582" />
                             <option name="y" value="1345" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="testVBFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
                           </Point>
                         </option>
                       </LayoutPositions>

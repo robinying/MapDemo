@@ -111,9 +111,9 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
 
         }
         mDataBinding.tvTestVb.clickNoRepeat {
-            //nav().navigateAction(R.id.action_main_to_testVBFragment)
-            val intent = Intent(mActivity, TestVBActivity::class.java)
-            startActivity(intent)
+            nav().navigateAction(R.id.action_main_to_testVBFragment)
+//            val intent = Intent(mActivity, TestVBActivity::class.java)
+//            startActivity(intent)
 
         }
         if (!allPermissionsGranted()) {
