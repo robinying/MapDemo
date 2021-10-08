@@ -37,6 +37,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.blankj.utilcode.util.FileUtils
 import com.robin.mapdemo.service.ForegroundCoreService
+import com.robin.mapdemo.ui.recycleview.RecycleViewActivity
 import com.robin.mapdemo.ui.test.TestTransDataActivity
 import com.robin.mapdemo.ui.test.TestVBActivity
 import com.robin.mapdemo.ui.test.TestVBViewModel
@@ -114,6 +115,11 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
             nav().navigateAction(R.id.action_main_to_testVBFragment)
 //            val intent = Intent(mActivity, TestVBActivity::class.java)
 //            startActivity(intent)
+
+        }
+        mDataBinding.tvRecycleView.clickNoRepeat {
+            val intent = Intent(mActivity, RecycleViewActivity::class.java)
+            startActivity(intent)
 
         }
         if (!allPermissionsGranted()) {

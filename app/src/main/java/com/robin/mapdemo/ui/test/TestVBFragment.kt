@@ -40,6 +40,7 @@ class TestVBFragment : BaseVBFragment<TestVBViewModel, FragmentTestVbBinding>() 
         super.createObserver()
         mViewModel.data.observe(viewLifecycleOwner, Observer {
             binding.tvContent.text = it
+            binding.pieView.anim.start()
 
         })
     }

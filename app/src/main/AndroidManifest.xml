@@ -26,6 +26,10 @@
         android:theme="@style/Theme.MapDemo"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.recycleview.RecycleViewActivity"
+            android:screenOrientation="portrait"
+            android:exported="true" />
+        <activity
             android:name=".ui.test.TestVBActivity"
             android:exported="true" />
 

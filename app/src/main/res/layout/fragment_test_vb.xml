@@ -40,4 +40,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_pic" />
 
+    <com.robin.mapdemo.widget.demo.PieView
+        android:id="@+id/pie_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_pic2"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
