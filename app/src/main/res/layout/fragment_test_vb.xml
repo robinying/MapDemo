@@ -30,15 +30,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_content" />
 
-    <ImageView
-        android:id="@+id/iv_pic2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+
+    <com.robin.mapdemo.widget.demo.TouchRotateLayout
+        android:id="@+id/touch_layout"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginTop="30dp"
-        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_pic" />
+        app:layout_constraintTop_toBottomOf="@id/iv_pic">
+
+        <ImageView
+            android:id="@+id/iv_pic2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY" />
+    </com.robin.mapdemo.widget.demo.TouchRotateLayout>
+
 
     <com.robin.mapdemo.widget.demo.PieView
         android:id="@+id/pie_view"
@@ -46,6 +55,6 @@
         android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_pic2"/>
+        app:layout_constraintTop_toBottomOf="@id/touch_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

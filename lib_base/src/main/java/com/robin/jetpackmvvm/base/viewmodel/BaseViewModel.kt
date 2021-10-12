@@ -1,7 +1,12 @@
 package com.robin.jetpackmvvm.base.viewmodel
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.robin.jetpackmvvm.callback.livedata.event.EventLiveData
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 
 /**
  * 作者　: hegaojian
@@ -9,6 +14,20 @@ import com.robin.jetpackmvvm.callback.livedata.event.EventLiveData
  * 描述　: ViewModel的基类 使用ViewModel类，放弃AndroidViewModel，原因：用处不大 完全有其他方式获取Application上下文
  */
 open class BaseViewModel : ViewModel() {
+
+    /**
+     * 在主线程中执行一个协程
+     */
+    protected fun launchOnMain(block: suspend CoroutineScope.() -> Unit): Job {
+        return viewModelScope.launch(Dispatchers.Main) { block() }
+    }
+
+    /**
+     * 在IO线程中执行一个协程
+     */
+    protected fun launchOnIO(block: suspend CoroutineScope.() -> Unit): Job {
+        return viewModelScope.launch(Dispatchers.IO) { block() }
+    }
 
     val loadingChange: UiLoadingChange by lazy { UiLoadingChange() }
 
@@ -18,6 +37,7 @@ open class BaseViewModel : ViewModel() {
     inner class UiLoadingChange {
         //显示加载框
         val showDialog by lazy { EventLiveData<String>() }
+
         //隐藏
         val dismissDialog by lazy { EventLiveData<Boolean>() }
     }
