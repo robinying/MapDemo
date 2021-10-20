@@ -11,8 +11,8 @@ object BuildVersions {
 
 object Versions {
     const val android_plugin = "4.0.0"
-    const val kotlin = "1.4.30"
-    const val kotlin_coroutines = "1.4.3"
+    const val kotlin = "1.5.31"
+    const val kotlin_coroutines = "1.5.2"
     const val coreKtx = "1.6.0"
 
     const val appcompat = "1.2.0"
