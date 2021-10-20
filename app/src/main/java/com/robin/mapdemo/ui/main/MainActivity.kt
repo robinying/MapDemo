@@ -23,9 +23,11 @@ import kotlin.collections.HashMap
 import android.os.Parcel
 import com.blankj.utilcode.util.GsonUtils
 import com.robin.mapdemo.BuildConfig
+import dagger.hilt.android.AndroidEntryPoint
 import java.lang.RuntimeException
 
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity<BaseViewModel, ActivityMainBinding>() {
     var exitTime = 0L
 

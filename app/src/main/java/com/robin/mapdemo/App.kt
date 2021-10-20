@@ -19,7 +19,9 @@ import com.robin.mapdemo.ui.main.MainActivity
 import com.tencent.bugly.Bugly
 import com.tencent.bugly.crashreport.CrashReport
 import com.tencent.mmkv.MMKV
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class App : BaseApp() {
     override fun onCreate() {
         super.onCreate()

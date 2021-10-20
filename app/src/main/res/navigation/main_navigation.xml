@@ -66,6 +66,14 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
 
+        <action
+            android:id="@+id/action_main_to_coroutineFragment"
+            app:destination="@id/coroutineFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
     </fragment>
 
     <fragment
@@ -139,4 +147,10 @@
         android:name="com.robin.mapdemo.ui.test.TestVBFragment"
         android:label="TestVBFragment"
         tools:layout="@layout/fragment_test_vb" />
+
+    <fragment
+        android:id="@+id/coroutineFragment"
+        android:name="com.robin.mapdemo.ui.coroutine.CoroutineFragment"
+        android:label="CoroutineFragment"
+        tools:layout="@layout/fragment_coroutine" />
 </navigation>

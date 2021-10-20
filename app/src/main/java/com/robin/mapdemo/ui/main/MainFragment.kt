@@ -120,6 +120,9 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
         mDataBinding.tvRecycleView.clickNoRepeat {
             val intent = Intent(mActivity, RecycleViewActivity::class.java)
             startActivity(intent)
+        }
+        mDataBinding.tvFlow.clickNoRepeat {
+            nav().navigateAction(R.id.action_main_to_coroutineFragment)
 
         }
         if (!allPermissionsGranted()) {
@@ -150,10 +153,10 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
 
     override fun lazyLoadData() {
         super.lazyLoadData()
-        Looper.myQueue().addIdleHandler {
-            LogUtils.d("robinTest addIdleHandler")
-            false
-        }
+//        Looper.myQueue().addIdleHandler {
+//            LogUtils.d("robinTest addIdleHandler")
+//            false
+//        }
         val intent = Intent(mActivity, ForegroundCoreService::class.java)
         mActivity.startService(intent)
         mViewModel.activeArcFace()
