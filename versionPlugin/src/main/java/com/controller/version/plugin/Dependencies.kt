@@ -19,7 +19,7 @@ object Versions {
     const val material = "1.4.0"
     const val jetpack_lifecycle = "2.3.0"
     const val jetpack_viewModel = "2.3.0"
-    const val jetpack_room = "2.3.0-alpha01"
+    const val jetpack_room = "2.3.0"
     const val jetpack_navigation = "2.3.3"
     const val jetpack_paging = "3.0.0-alpha07"
 

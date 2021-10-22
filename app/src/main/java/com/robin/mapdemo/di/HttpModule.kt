@@ -1,5 +1,6 @@
 package com.robin.mapdemo.di
 
+import com.robin.mapdemo.data.NewsRepository
 import com.robin.mapdemo.data.WeatherRepository
 import dagger.Module
 import dagger.Provides
@@ -15,5 +16,11 @@ object HttpModule {
     @Provides
     fun provideWeatherRepository(): WeatherRepository {
         return WeatherRepository()
+    }
+
+    @ViewModelScoped
+    @Provides
+    fun provideNewsRepository(): NewsRepository {
+        return NewsRepository()
     }
 }

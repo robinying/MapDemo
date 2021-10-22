@@ -14,14 +14,23 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.robin.commonUi.ext.hideSoftKeyboard
 import com.robin.jetpackmvvm.base.viewmodel.BaseViewModel
+import com.robin.jetpackmvvm.ext.getAppViewModel
 import com.robin.jetpackmvvm.ext.getVmClazz
 import com.robin.jetpackmvvm.network.manager.NetState
 import com.robin.jetpackmvvm.network.manager.NetworkStateManager
 import com.robin.jetpackmvvm.util.inflateBindingWithGeneric
+import com.robin.mapdemo.app.event.AppViewModel
+import com.robin.mapdemo.app.event.EventViewModel
 import com.robin.mapdemo.app.ext.dismissLoadingExt
 import com.robin.mapdemo.app.ext.showLoadingExt
 
 abstract class BaseVBFragment<VM : BaseViewModel, VB : ViewBinding> : Fragment() {
+
+    //Application全局的ViewModel，里面存放了一些账户信息，基本配置信息等
+    val appViewModel: AppViewModel by lazy { getAppViewModel<AppViewModel>() }
+
+    //Application全局的ViewModel，用于发送全局通知操作
+    val eventViewModel: EventViewModel by lazy { getAppViewModel<EventViewModel>() }
 
     private val handler = Handler()
 
