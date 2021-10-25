@@ -37,6 +37,7 @@ class MainViewModel : BaseViewModel() {
                 }
 
             }.onSuccess { activeCode ->
+                LogUtils.d("robinTest","activeCode:$activeCode")
                 if (activeCode == ErrorInfo.MOK) {
                     ToastUtils.showShort("Active success")
                 } else if (activeCode == ErrorInfo.MERR_ASF_ALREADY_ACTIVATED) {
@@ -44,7 +45,6 @@ class MainViewModel : BaseViewModel() {
                 } else {
                     ToastUtils.showShort("Active fail, error code:$activeCode")
                 }
-
             }.onFailure {
 
 

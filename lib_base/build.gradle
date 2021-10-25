@@ -57,7 +57,7 @@ dependencies {
     // liveData
     compileOnly Dependencies.livedataKtx
     //paging
-    compileOnly Dependencies.paging
+//    compileOnly Dependencies.paging
     //navigation
     //compileOnly rootProject.depsLibs.navigationFragment
     //compileOnly rootProject.depsLibs.navigationUi
