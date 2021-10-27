@@ -8,7 +8,7 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="CoroutineFragment">
+                  <entry key="ViewFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
@@ -98,6 +98,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="coroutineFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="mainFragment">
                     <value>
                       <LayoutPositions>
@@ -120,6 +132,11 @@
                               </value>
                             </entry>
                             <entry key="action_main_to_cameraFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_main_to_coroutineFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -207,13 +224,25 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="RvVBFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-92" />
+                            <option name="y" value="396" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="groupFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="88" />
-                            <option name="y" value="2" />
+                            <option name="x" value="115" />
+                            <option name="y" value="7" />
                           </Point>
                         </option>
                       </LayoutPositions>

@@ -10,7 +10,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center|top"
         android:orientation="vertical">
 
         <com.robin.commonUi.customview.actionbar.TitleBar
@@ -20,149 +19,181 @@
             app:tb_titleText="地图使用"
             app:tb_useThemeColor="true" />
 
-        <com.robin.commonUi.customview.textview.DPTextView
-            android:id="@+id/tv_amap"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginTop="24dp"
-            android:alpha=".9"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="高德地图"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_small"
-            app:backgroundColor="@color/colorAccent"
-            app:corner_radius="2dp" />
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <com.robin.commonUi.customview.textview.DPTextView
-            android:id="@+id/tv_baidu"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginTop="24dp"
-            android:alpha=".9"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="百度地图"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_small"
-            app:backgroundColor="@color/colorAccent"
-            app:corner_radius="2dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|top"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_view_pager"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:padding="4dp"
-            android:text="Test round"
-            android:textColor="@color/white" />
+                <com.robin.commonUi.customview.textview.DPTextView
+                    android:id="@+id/tv_amap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="24dp"
+                    android:alpha=".9"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:text="高德地图"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:backgroundColor="@color/colorAccent"
+                    app:corner_radius="2dp" />
 
-        <com.robin.commonUi.customview.textview.DPTextView
-            android:id="@+id/tv_tab_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginTop="16dp"
-            android:alpha=".8"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="TabLayout"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_small"
-            app:backgroundColor="@color/colorAccent"
-            app:corner_radius="4dp" />
+                <com.robin.commonUi.customview.textview.DPTextView
+                    android:id="@+id/tv_baidu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="24dp"
+                    android:alpha=".9"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:text="百度地图"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:backgroundColor="@color/colorAccent"
+                    app:corner_radius="2dp" />
 
-        <com.robin.commonUi.customview.textview.DPTextView
-            android:id="@+id/tv_test_transact"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginTop="16dp"
-            android:alpha=".8"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="Test Transact"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_small"
-            app:backgroundColor="#30D312"
-            app:corner_radius="4dp" />
+                <TextView
+                    android:id="@+id/tv_view_pager"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:padding="4dp"
+                    android:text="Test round"
+                    android:textColor="@color/white" />
 
-        <com.robin.commonUi.customview.textview.DPTextView
-            android:id="@+id/tv_camera"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginTop="16dp"
-            android:alpha=".8"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="Camera"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_small"
-            app:backgroundColor="#30D312"
-            app:corner_radius="4dp" />
+                <com.robin.commonUi.customview.textview.DPTextView
+                    android:id="@+id/tv_tab_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="16dp"
+                    android:alpha=".8"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:text="TabLayout"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:backgroundColor="@color/colorAccent"
+                    app:corner_radius="4dp" />
 
-        <com.robin.commonUi.customview.textview.DPTextView
-            android:id="@+id/tv_usb"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginTop="16dp"
-            android:alpha=".8"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="Usb"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_small"
-            app:backgroundColor="#4BADE3"
-            app:corner_radius="4dp" />
+                <com.robin.commonUi.customview.textview.DPTextView
+                    android:id="@+id/tv_test_transact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="16dp"
+                    android:alpha=".8"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:text="Test Transact"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:backgroundColor="#30D312"
+                    app:corner_radius="4dp" />
 
-        <com.robin.commonUi.customview.textview.DPTextView
-            android:id="@+id/tv_test_vb"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginTop="16dp"
-            android:alpha=".8"
-            android:gravity="center"
-            android:paddingStart="8dp"
-            android:paddingTop="4dp"
-            android:paddingEnd="8dp"
-            android:paddingBottom="4dp"
-            android:text="ViewBinding"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_small"
-            app:backgroundColor="#4BADE3"
-            app:corner_radius="4dp" />
+                <com.robin.commonUi.customview.textview.DPTextView
+                    android:id="@+id/tv_camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="16dp"
+                    android:alpha=".8"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:text="Camera"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:backgroundColor="#30D312"
+                    app:corner_radius="4dp" />
 
-        <com.robin.commonUi.customview.textview.DPTextView
-            android:id="@+id/tv_recycle_view"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginTop="16dp"
-            android:alpha=".8"
-            android:gravity="center"
-            android:paddingStart="8dp"
-            android:paddingTop="4dp"
-            android:paddingEnd="8dp"
-            android:paddingBottom="4dp"
-            android:text="RecycleView"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_small"
-            app:backgroundColor="#4BADE3"
-            app:corner_radius="4dp" />
+                <com.robin.commonUi.customview.textview.DPTextView
+                    android:id="@+id/tv_usb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="16dp"
+                    android:alpha=".8"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:text="Usb"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:backgroundColor="#4BADE3"
+                    app:corner_radius="4dp" />
 
-        <com.robin.commonUi.customview.textview.DPTextView
-            android:id="@+id/tv_flow"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginTop="16dp"
-            android:alpha=".8"
-            android:gravity="center"
-            android:paddingStart="8dp"
-            android:paddingTop="4dp"
-            android:paddingEnd="8dp"
-            android:paddingBottom="4dp"
-            android:text="Coroutine And Hilt"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_small"
-            app:backgroundColor="#4BADE3"
-            app:corner_radius="4dp" />
+                <com.robin.commonUi.customview.textview.DPTextView
+                    android:id="@+id/tv_test_vb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="16dp"
+                    android:alpha=".8"
+                    android:gravity="center"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="ViewBinding"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:backgroundColor="#4BADE3"
+                    app:corner_radius="4dp" />
+
+                <com.robin.commonUi.customview.textview.DPTextView
+                    android:id="@+id/tv_recycle_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="16dp"
+                    android:alpha=".8"
+                    android:gravity="center"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="RecycleView"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:backgroundColor="#4BADE3"
+                    app:corner_radius="4dp" />
+
+
+                <com.robin.commonUi.customview.textview.DPTextView
+                    android:id="@+id/tv_test_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="16dp"
+                    android:alpha=".8"
+                    android:gravity="center"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="View usage"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:backgroundColor="#4BADE3"
+                    app:corner_radius="4dp" />
+
+                <com.robin.commonUi.customview.textview.DPTextView
+                    android:id="@+id/tv_flow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="16dp"
+                    android:alpha=".8"
+                    android:gravity="center"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="Coroutine And Hilt"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    app:backgroundColor="#4BADE3"
+                    app:corner_radius="4dp" />
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
 
     </LinearLayout>
 </layout>

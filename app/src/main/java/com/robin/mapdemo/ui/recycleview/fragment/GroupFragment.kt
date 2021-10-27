@@ -1,6 +1,7 @@
 package com.robin.mapdemo.ui.recycleview.fragment
 
 import android.os.Bundle
+import android.os.Looper
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.drake.brv.item.ItemExpand
@@ -12,7 +13,7 @@ import com.robin.mapdemo.app.base.BaseVBFragment
 import com.robin.mapdemo.databinding.FragmentGroupBinding
 import com.robin.mapdemo.model.GroupModel
 import com.robin.mapdemo.model.Model
-import com.robin.mapdemo.model.NestedGroupModel
+
 
 class GroupFragment:BaseVBFragment<BaseViewModel,FragmentGroupBinding>() {
     override fun initView(savedInstanceState: Bundle?) {

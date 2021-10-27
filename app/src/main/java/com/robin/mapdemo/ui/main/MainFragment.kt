@@ -125,6 +125,10 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
             nav().navigateAction(R.id.action_main_to_coroutineFragment)
 
         }
+        mDataBinding.tvTestView.clickNoRepeat {
+            nav().navigateAction(R.id.action_main_to_viewFragment)
+
+        }
         if (!allPermissionsGranted()) {
             AndPermission.with(this)
                 .runtime()

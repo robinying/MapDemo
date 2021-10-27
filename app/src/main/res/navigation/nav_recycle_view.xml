@@ -17,4 +17,10 @@
         android:name="com.robin.mapdemo.ui.recycleview.fragment.GroupFragment"
         android:label="分组"
         tools:layout="@layout/fragment_group" />
+
+    <fragment
+        android:id="@+id/RvVBFragment"
+        android:name="com.robin.mapdemo.ui.recycleview.fragment.RvVBFragment"
+        android:label="BindingQuick"
+        tools:layout="@layout/fragment_rv_vb" />
 </navigation>
