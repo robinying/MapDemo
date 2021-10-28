@@ -83,6 +83,10 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
             nav().navigateAction(R.id.action_main_to_viewPagerTestFragment)
 
         }
+        mDataBinding.tvArcFace.clickNoRepeat {
+            nav().navigateAction(R.id.action_main_to_faceFragment)
+
+        }
         mDataBinding.tvTabLayout.extraAnimClickListener(ValueAnimator.ofFloat(1.0f, 1.5f).apply {
             interpolator = AccelerateInterpolator()
             duration = 100
