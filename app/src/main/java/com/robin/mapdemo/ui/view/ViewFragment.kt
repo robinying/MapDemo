@@ -5,6 +5,7 @@ import com.robin.jetpackmvvm.base.viewmodel.BaseViewModel
 import com.robin.mapdemo.app.base.BaseVBFragment
 import com.robin.mapdemo.databinding.FragmentViewBinding
 
+//Test View ontouch
 class ViewFragment : BaseVBFragment<BaseViewModel, FragmentViewBinding>() {
     override fun initView(savedInstanceState: Bundle?) {
 

@@ -10,9 +10,16 @@
         android:layout_height="100dp"
         android:background="@color/colorPrimary"
         android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.robin.mapdemo.widget.demo.PhotoView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/custom_view"
+        app:pv_img="@drawable/ic_beauty_woman" />
+
 
 </com.robin.mapdemo.widget.demo.CustomLayout>
