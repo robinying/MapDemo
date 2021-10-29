@@ -132,9 +132,15 @@ class PhotoView @JvmOverloads constructor(
             distanceY: Float,
         ): Boolean {
             Log.i("robinTest", "滑动了  onScroll distanceX:$distanceX ---distanceY:$distanceY")
+            val max = mBitmap!!.width.toFloat() * bigScale / 2 - width / 2
             if (currentScale == bigScale) {
                 moveOffsetX -= distanceX
                 moveOffsetY -= distanceY
+                if (moveOffsetX < -max) {
+                    moveOffsetX = -max
+                } else if (moveOffsetX > max) {
+                    moveOffsetX = max
+                }
                 invalidate()
             }
 
@@ -146,7 +152,6 @@ class PhotoView @JvmOverloads constructor(
             //      向下滑动 负数
 
 
-            invalidate()
 //            }
 
             return super.onScroll(e1, e2, distanceX, distanceY)
@@ -187,6 +192,9 @@ class PhotoView @JvmOverloads constructor(
             if (currentScale == smallScale) {
                 scaleAnimation(smallScale, bigScale).start()
             } else {
+                moveOffsetX = 0f
+                moveOffsetY = 0f
+                invalidate()
                 scaleAnimation(bigScale, smallScale).start()
             }
 
